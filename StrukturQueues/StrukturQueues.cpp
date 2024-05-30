@@ -22,4 +22,9 @@ public:
 			return;
 		}
 
+		// Cek apakah kosong
+		if (FRONT == -1) {
+			FRONT = 0;
+			REAR = 0;
+		}
 		
