@@ -37,4 +37,30 @@ public:
 		queues_array[REAR] = num;
 	}
 
-	
+	void remove() {
+		// Cek apakah antrian kosong
+		if (FRONT == -1) {
+			cout << "Queue underflow\n";
+			return;
+		}
+		cout << "\nThe elemen deleted from the queue is: " << queues_array[FRONT] << "\n";
+
+		// cek jika antrian hanya memiliki satu elemen
+		if (FRONT == REAR) {
+			FRONT = -1;
+			REAR = -1;
+		}
+		else {
+			//jika elemen yang dihapus berada di posisi terakhir array, kembali ke awal array
+			if (FRONT == max - 1)
+				FRONT = 0;
+			else
+				FRONT = FRONT + 1;
+		}
+	}
+
+	void display() {
+		int FRONT_position = FRONT;
+		int REAR_position = REAR;
+
+		
